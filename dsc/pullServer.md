@@ -30,7 +30,7 @@ Configuration Sample_xDSCService
       [String] $certificateThumbPrint
     )
 
-    Import-DSCResource –ModuleName DSCService
+    Import-DSCResource -ModuleName DSCService
     Node localhost
     {
         WindowsFeature DSCServiceFeature
@@ -50,7 +50,7 @@ Configuration Sample_xDSCService
             ModulePath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
             ConfigurationPath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
             State = "Started"
-            DependsOn = "[WindowsFeature]DSCServiceFeature
+            DependsOn = "[WindowsFeature]DSCServiceFeature"
         }
     }
 }
